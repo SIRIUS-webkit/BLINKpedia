@@ -9,6 +9,7 @@ load_dotenv()
 import time
 
 os.environ['HUGGINGFACEHUB_API_TOKEN'] = os.getenv("HUGGINGFACEHUB_API_TOKEN")
+print(st.secrets["HUGGINGFACEHUB_API_TOKEN"])
 
 CHROMA_PATH = "chroma"
 
