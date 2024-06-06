@@ -7,6 +7,9 @@ from langchain_community.vectorstores.chroma import Chroma
 from langchain.prompts import ChatPromptTemplate
 load_dotenv()
 import time
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 if "HUGGINGFACEHUB_API_TOKEN" in st.secrets:
     HUGGINGFACEHUB_API_TOKEN = st.secrets["HUGGINGFACEHUB_API_TOKEN"]
