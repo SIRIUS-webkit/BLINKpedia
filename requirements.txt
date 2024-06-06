@@ -1,0 +1,8 @@
+langchain
+unstructured # Document loading
+chromadb # Vector storage
+openai # For embeddings
+tiktoken  # For embeddings
+streamlit
+langchain_openai
+langchain_huggingface
