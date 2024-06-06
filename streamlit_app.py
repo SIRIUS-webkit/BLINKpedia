@@ -8,7 +8,12 @@ from langchain.prompts import ChatPromptTemplate
 load_dotenv()
 import time
 
-os.environ['HUGGINGFACEHUB_API_TOKEN'] = os.getenv("HUGGINGFACEHUB_API_TOKEN")
+if "HUGGINGFACEHUB_API_TOKEN" in st.secrets:
+    HUGGINGFACEHUB_API_TOKEN = st.secrets["HUGGINGFACEHUB_API_TOKEN"]
+else:
+    HUGGINGFACEHUB_API_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
+
+os.environ['HUGGINGFACEHUB_API_TOKEN'] = HUGGINGFACEHUB_API_TOKEN
 
 CHROMA_PATH = "chroma"
 
