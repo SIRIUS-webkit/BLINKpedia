@@ -6,3 +6,5 @@ tiktoken  # For embeddings
 streamlit
 langchain_openai
 langchain_huggingface
+langchain_community
+python-dotenv
