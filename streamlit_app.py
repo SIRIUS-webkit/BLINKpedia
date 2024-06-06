@@ -9,7 +9,6 @@ load_dotenv()
 import time
 
 os.environ['HUGGINGFACEHUB_API_TOKEN'] = os.getenv("HUGGINGFACEHUB_API_TOKEN")
-print(st.secrets["HUGGINGFACEHUB_API_TOKEN"])
 
 CHROMA_PATH = "chroma"
 
@@ -66,7 +65,7 @@ def BgeEmbedding():
     model_kwargs = {"device": "cpu"}
     encode_kwargs = {"normalize_embeddings": True}
     hf = HuggingFaceBgeEmbeddings(
-        model_name=model_name, model_kwargs=model_kwargs, encode_kwargs=encode_kwargs
+        model_name=model_name, model_kwargs=model_kwargs, encode_kwargs=encode_kwargs, token=st.secrets["HUGGINGFACEHUB_API_TOKEN"]
     )
     return hf
 
@@ -89,7 +88,7 @@ def generate_format_prompt(input):
 
 def generate_llama2_response(prompt_input):
     format_prompt = generate_format_prompt(prompt_input)
-    llm =  HuggingFaceHub(repo_id="unsloth/tinyllama-chat", model_kwargs={"temperature":0.3,})
+    llm =  HuggingFaceHub(repo_id="unsloth/tinyllama-chat", model_kwargs={"temperature":0.3,}, token=st.secrets["HUGGINGFACEHUB_API_TOKEN"])
     output = llm.invoke(format_prompt)
 
     return output
