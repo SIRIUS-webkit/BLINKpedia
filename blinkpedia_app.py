@@ -88,7 +88,7 @@ def generate_format_prompt(input):
 
 def generate_llama2_response(prompt_input):
     format_prompt = generate_format_prompt(prompt_input)
-    llm =  HuggingFaceHub(repo_id="unsloth/tinyllama-chat", model_kwargs={"temperature":0.4,})
+    llm =  HuggingFaceHub(repo_id="unsloth/tinyllama-chat", model_kwargs={"temperature":0.3,})
     output = llm.invoke(format_prompt)
 
     return output
