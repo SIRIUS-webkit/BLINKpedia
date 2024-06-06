@@ -127,7 +127,7 @@ st.markdown(
     .st-emotion-cache-1v0mbdj img{
         border-radius: 20px;
     }
-    .st-emotion-cache-1wbqy5l {
+    .st-emotion-cache-1wbqy5l,.st-emotion-cache-1p1m4ay {
         display: none;
     }
     .st-emotion-cache-1mi2ry5{
